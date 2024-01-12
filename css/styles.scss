@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary: hsl(47, 88%, 63%);
+    --secondary-one: hsl(0, 0%, 100%);
+    --secondary-two: hsl(0, 0%, 50%);
+    --secondary-three: hsl(0, 0%, 7%);
+}
+
+body{
+    font-family: 'Figtree', sans-serif;
+    font-size: 16px;
+    background-color: var(--primary);
+}
+
+.content{
+    background-color: var(--secondary-one);
+    width: 85%;
+    margin: 100px auto;
+    border-radius: 10px;
+    border: 2px solid var(--secondary-three);
+    box-shadow: 5px 5px var(--secondary-three);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    header{
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        img{
+            width: 100%;
+            display: block;
+        }
+    }
+
+    main{
+        .tag{
+            font-size: .8rem;
+            color: var(--secondary-three);
+            background-color: var(--primary);
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-weight: 800;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .date{
+            font-size: .8rem;
+            color: var(--secondary-three);
+            margin-bottom: 20px;
+        }
+
+        .title-article{
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .description{
+            color: var(--secondary-two);
+        }
+    }
+    footer{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .footer-img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            img{
+                display: inline-block;
+                width: 100%;
+                object-position: center;
+                object-fit: cover;
+            }
+        }
+
+        .footer-name{
+            p{
+                font-weight: 800;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 376px) {
+    .content{
+        width: 375px;
+        transition: all ease 300ms;
+        main{    
+            .title-article{
+                transition: all ease 300ms;
+                cursor: pointer;
+            }
+
+            .title-article:hover{
+                color: var(--primary);
+            }
+        }
+    }
+
+    .content:hover{
+        box-shadow: 10px 10px var(--secondary-three);
+    }
+}
